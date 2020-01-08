@@ -31,8 +31,4 @@
       </ul>
     </div>
   </div>
-  <input type="tel" id="phone" autocomplete="off" [ngClass]="cssClass" (blur)="onTouched()"
-    (keypress)="onInputKeyPress($event)" [(ngModel)]="phoneNumber" (ngModelChange)="onPhoneNumberChange()"
-    [disabled]="disabled" [placeholder]="selectedCountry?.placeHolder || ''" [attr.maxLength]="maxLength"
-    [attr.validation]="phoneValidation" #focusable>
 </div>

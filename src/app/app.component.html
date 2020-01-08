@@ -7,22 +7,29 @@
   </div>
   <form #f="ngForm" [formGroup]="phoneForm">
     <ngx-intl-tel-input
-    [cssClass]="'custom'"
     [preferredCountries]="preferredCountries"
     [enableAutoCountrySelect]="false"
-    [enablePlaceholder]="true"
     [searchCountryFlag]="true"
     [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
     [selectFirstCountry]="false"
     [selectedCountryISO]="CountryISO.India"
-    [maxLength]="15"
     [tooltipField]="TooltipLabel.Name"
-    [phoneValidation]="true"
-    name="phone"
-    formControlName="phone"></ngx-intl-tel-input>
+    >
+</ngx-intl-tel-input>
+    <br> <br>
+    <ngx-telphone-input    
+     [cssClass]="'custom'"
+     [enablePlaceholder]="true"
+     [maxLength]="15"
+     name="phone"
+     formControlName="phone"
+     [phoneValidation]="true"
+     >
+    </ngx-telphone-input>
   </form>
   <br>
-  <div><strong>Is input valid:</strong> <pre>{{ !f.form.controls['phone'].invalid }}</pre></div>
+  <div><strong>Is input valid:</strong> <pre>
+    {{ !f.form.controls['phone'].invalid }}</pre></div>
   <div><strong>Is input touched:</strong> <pre>{{ f.form.controls['phone'].touched }}</pre></div>
   <div><strong>Is form valid:</strong> <pre>{{ f.form.valid }}</pre></div>
   <div><strong>Form value:</strong> <pre>{{ f.form.value | json }}</pre></div>
